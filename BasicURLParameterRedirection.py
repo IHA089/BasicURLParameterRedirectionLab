@@ -218,8 +218,8 @@ def resend():
         bdcontent = "<h2>Verify Your Account password</h2><p>your verification code are given below</p><div style=\"background-color: orange; color: black; font-size: 14px; padding: 10px; border-radius: 5px; font-family: Arial, sans-serif;\">"+code[0]+"</div><p>If you did not request this, please ignore this email.</p>"
         mail_server = "https://127.0.0.1:7089/dcb8df93f8885473ad69681e82c423163edca1b13cf2f4c39c1956b4d32b4275"
         payload = {"email": username,
-                    "sender":"IHA089 Labs ::: MassUserEnumerationLab",
-                    "subject":"MassUserEnumerationLab::Verify Your Accout",
+                    "sender":"IHA089 Labs ::: BasicURLParameterRedirectionLab",
+                    "subject":"BasicURLParameterRedirectionLab::Verify Your Accout",
                     "bodycontent":bdcontent
                 }
         try:
@@ -353,8 +353,8 @@ def join():
         bdcontent = "<h2>Verify Your Account password</h2><p>your verification code are given below</p><div style=\"background-color: orange; color: black; font-size: 14px; padding: 10px; border-radius: 5px; font-family: Arial, sans-serif;\">"+code+"</div><p>If you did not request this, please ignore this email.</p>"
         mail_server = "https://127.0.0.1:7089/dcb8df93f8885473ad69681e82c423163edca1b13cf2f4c39c1956b4d32b4275"
         payload = {"email": username,
-                    "sender":"IHA089 Labs ::: idorATOLab",
-                    "subject":"idorATOLab::Verify Your Accout",
+                    "sender":"IHA089 Labs ::: BasicURLParameterRedirectionLab",
+                    "subject":"BasicURLParameterRedirectionLab::Verify Your Accout",
                     "bodycontent":bdcontent
                 }
         try:
@@ -421,11 +421,11 @@ def forgot():
                 conn.close()
                 username = uname.replace(" ","")
                 cmplt_url = "https://iha089-labs.in/reset?token="+token
-                bdcontent = "<h2>Reset Your Account password</h2><p>Click the button below to reset your account password on Improper Access Control Lab</p><a href=\""+cmplt_url+"\">Verify Your Account</a><p>If you did not request this, please ignore this email.</p>"
+                bdcontent = "<h2>Reset Your Account password</h2><p>Click the button below to reset your account password on Basic URL Parameter Redirection Lab</p><a href=\""+cmplt_url+"\">Verify Your Account</a><p>If you did not request this, please ignore this email.</p>"
                 mail_server = "https://127.0.0.1:7089/dcb8df93f8885473ad69681e82c423163edca1b13cf2f4c39c1956b4d32b4275"
                 payload = {"email": username,
-                            "sender":"IHA089 Labs ::: idorATOLab",
-                            "subject":"idorATOLab::Click bellow link to reset your password",
+                            "sender":"IHA089 Labs ::: BasicURLParameterRedirectionLab",
+                            "subject":"BasicURLParameterRedirectionLab::Click bellow link to reset your password",
                             "bodycontent":bdcontent
                     }
                 try:
