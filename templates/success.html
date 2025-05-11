@@ -11,11 +11,37 @@
 		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/admindashboard.css') }}">
 	</head>
 	<body>
 		<header>
 			<section id="particles-js">
+			<script>
+				window.addEventListener('load', function () {
+					const duration = 3 * 1000; 
+					const end = Date.now() + duration;
+		
+					(function frame() {
+						confetti({
+							particleCount: 5,
+							angle: 60,
+							spread: 55,
+							origin: { x: 0 },
+						});
+						confetti({
+							particleCount: 5,
+							angle: 120,
+							spread: 55,
+							origin: { x: 1 },
+						});
+		
+						if (Date.now() < end) {
+							requestAnimationFrame(frame);
+						}
+					})();
+				});
+			</script>
 			</section>
 			
 			<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
@@ -35,10 +61,16 @@
 					<div class="collapse navbar-collapse" id="navbar-menu">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="index.html">Home</a></li>
-							<li><a href="dashboard.html">Dashboard</a></li>
-							<li><a href="profile.html">Profile</a></li>
-							<li><a href="logout.html">Logout</a></li>
-							<li><a href="check.html">Submit Flag</a></li>
+							{% if user %}
+                            					<li><a href="dashboard.html">Dashboard</a></li>
+								<li><a href="profile.html">Profile</a></li>
+                            					<li><a href="logout.html">Logout</a></li>
+								<li><a href="check.html">Submit Flag</a></li>
+                        				{% else %}
+								<li><a href="login.html">Login</a></li>
+								<li><a href="check.html">Submit Flag</a></li>
+								<li><a href="join.html">Join Now</a></li>
+							{% endif %}
 							<li><a href="https://iha089.org">Official Website</a></li>
 							<li>
 								<div class="buy-coffee-container">
@@ -53,7 +85,11 @@
 			</nav>
 		</header>
 		<div class="body-contant">
-			<h4><span style="color:white"><strong>Welcome, {{user}}</strong></span></h4>
+			<h4><span style="color:white"><strong>Congratulations on Successfully Solving the Open Redirection Lab!</strong></span></h4>
+			<h2>Great job, security sleuth!</h2>
+			<p>You've successfully completed the <b>Open Redirection via Basic URL Parameter Redirection Lab!</b> This achievement demonstrates your ability to identify and exploit open redirection vulnerabilities, which attackers could use to redirect users to malicious sites. Your persistence and keen attention to detail are essential traits for uncovering and mitigating such security issues. By solving this lab, you've advanced your expertise in cybersecurity and strengthened your ability to protect systems from real-world threats. Keep up the great work—every solved challenge is another step toward mastery. Stay curious, stay secure, and keep learning!</p>
+			<p><strong>Congratulations once again!</strong></p>
+			<p>--The IHA089 Team</p>
 		</div>
 		<footer class="footer">
 			<div class="footer-left">
